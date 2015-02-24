@@ -1,0 +1,7 @@
+ #!/bin/sh
+  
+
+  dredd apiary.apib http://api.demo.stadion.io
+  RESULT=$?
+
+  exit $RESULT

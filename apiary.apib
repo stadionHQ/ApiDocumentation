@@ -1,0 +1,607 @@
+FORMAT: 1A
+
+# Stadion Public API
+
+## Article Single [/article/{id}]
+### A single Article object with all its details [GET]
++ Response 200 (application/json)
+
+        {
+            "article" : {
+                "id" : "1",
+                "title" : "Article one",
+                "author"  : {
+                        "name" : "Uncle bob",
+                        "twitterHandle" : "twitter_handle"
+                },
+                "summary" : "Article one summary",
+                "content" : "<p>Some content for the article. Some content for the article. Some content for the article. </p><p>Some content for the article. Some content for the article. Some content for the article. </p><p>Some content for the article. Some content for the article. Some content for the article. </p>",
+                "image" : {
+                    "urls" :{
+                      "small" : {
+                        "url" : "/img/450x253.gif",
+                        "mw" : "450w"
+                      },
+                      "medium" : {
+                        "url" : "/img/900x506.gif",
+                        "mw" : "900w"
+                      },
+                      "large" : {
+                        "url" : "/img/1200x675.gif",
+                        "mw" : "1600w"
+                      },
+                      "xlarge" : {
+                        "url" : "/img/2400x1350.gif",
+                        "mw" : "2400w"
+                      }
+                    },
+                    "altText" : "The alt text",
+                    "isSmall" : false
+                },
+                "thumbnail" : {
+                        "altText" : "Author name name",
+                        "url" : "/img/100x100.gif"
+                },
+                "url" : "Article/one",
+                "quote" : "what an amazing game",
+                "personQuoting" : "Lee Cook"
+            }
+        }
+
+
++ Parameters
+    + id (required, number, `1`) ... Numeric `id` of the Article to perform action with. Has example value.
+
+## ContentListing Collection [/content-listing]
+### List all Items in a content list [GET]
++ Response 200 (application/json)
+
+        { 
+            "contentListing" : {
+                "items": [
+                    {
+                        "title" : "Article one",
+                        "summary" : "Article one summary",
+                        "image" : {
+                            "urls" :{
+                              "small" : {
+                                "url" : "/img/480x270.gif",
+                                "mw" : "480w"
+                              },
+                              "medium" : {
+                                "url" : "/img/380x214.gif",
+                                "mw" : "800w"
+                              },
+                              "large" : {
+                                "url" : "/img/750x422.gif",
+                                "mw" : "1200w"
+                              }
+                            },
+                            "altText" : "The alt text",
+                            "isSmall" : false
+                        },
+                        "link" : {
+                            "title" : "link title",
+                            "url" : "/article/1"
+                        }
+                    },
+                    {
+                        
+                        "title" : "Article two",
+                        "summary" : "Article two summary with loads more text with loads more text with loads more text with loads more text",
+                        "image" : {
+                            "urls" :{
+                              "small" : {
+                                "url" : "/img/480x270.gif",
+                                "mw" : "480w"
+                              },
+                              "medium" : {
+                                "url" : "/img/380x214.gif",
+                                "mw" : "800w"
+                              },
+                              "large" : {
+                                "url" : "/img/750x422.gif",
+                                "mw" : "1200w"
+                              }
+                            },
+                            "altText" : "The alt text",
+                            "isSmall" : false
+                        },
+                        "link" : {
+                            "title" : "link title",
+                            "url" : "article/1"
+                        }
+                    }
+                ],
+                "totalNumberOfPages" : "100",
+                "currentPage" : "2",
+                "listType" : "vertical"
+            }
+        }
+        
+
+## Fixtures Module [/fixtures/{teamdId}]
+### List of fixtures [GET]
++ Response 200 (application/json)
+        
+        {
+            "fixtures": {
+                "allSeasons" : [
+                    { 
+                        "description" : "13/14",
+                        "id" : "1",     
+                        "sortOrder" : "1"
+                    },
+                    { 
+                        "description" : "14/15",
+                        "id" : "2",     
+                        "sortOrder" : "2"
+                    }
+                        
+                ],
+
+                "selectedSeason" :  { 
+                        "description" : "14/15",
+                        "id" : "2",     
+                        "sortOrder" : "2"
+                },
+                "dateUpdated" : "",
+                "nextGame" :  {
+                        "homeClub" : {
+                            "name" : "arsneal",
+                            "crestUrl" : "/aa"
+                        },
+                        "awayClub" : {
+                            "name" : "MCFC",
+                            "crestUrl" : "/aa"
+                        },
+                        "kickOff" : "2pm 10 January 2014", 
+                        "competition" : {
+                            "id" : "1",
+                            "name" : "premiership",
+                            "crestUrl" : "/img/100x100.gif",
+                            "optaId" : "123"
+                        },
+                        "isHomeGame" : true,
+                        "homeTeamScore" : "0",
+                        "awayTeamScore" : "0",
+                        "hasBeenPlayed" : false,
+                        "matchReportLink" : "",
+                        "isOnTv" : true,
+                        "tvChannelLogo" : {
+                            "url" : "/img/100x100.gif",
+                            "altText" : "Channel name"
+                        }
+                },
+                "allFixtures" : [
+                    {
+                        "month" : "January",
+                        "fixtures" : [
+                            {
+                                "homeClub" : {
+                                    "name" : "arsneal",
+                                    "crestUrl" : "/img/100x100.gif"
+                                },
+                                "awayClub" : {
+                                    "name" : "wba",
+                                    "crestUrl" : "/img/100x100.gif"
+                                },
+                                "kickOff" : "2pm 10 January",
+                                "competition" : {
+                                    "id" : "1",
+                                    "name" : "premiership",
+                                    "crestUrl" : "/img/100x100.gif",
+                                    "optaId" : "123"
+                                }, 
+                                "isHomeGame" : true,
+                                "homeTeamScore" : "2",
+                                "awayTeamScore" : "1",
+                                "hasBeenPlayed" : true,
+                                "matchReportLink" : "/matchreport",
+                                "isOnTv" : true,
+                                "tvChannelLogo" : {
+                                    "url" : "/img/100x100.gif",
+                                    "altText" : "Channel name"
+                                }
+                            },
+                            {
+                                "homeClub" : {
+                                    "name" : "arsneal",
+                                    "crestUrl" : "/img/100x100.gif"
+                                },
+                                "awayClub" : {
+                                    "name" : "wba",
+                                    "crestUrl" : "/img/100x100.gif"
+                                },
+                                "kickOff" : "2pm 28 January", 
+                                "competition" : {
+                                    "id" : "1",
+                                    "name" : "premiership",
+                                    "crestUrl" : "/img/100x100.gif",
+                                    "optaId" : "123"
+                                },
+                                "isHomeGame" : false,
+                                "homeTeamScore" : "0",
+                                "awayTeamScore" : "0",
+                                "hasBeenPlayed" : false,
+                                "matchReportLink" : "/previewlink",
+                                "isOnTv" : false,
+                                "tvChannelLogo" : {
+                                    "url" : "/img/100x100.gif",
+                                    "altText" : "Channel name"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "month" : "February",
+                        "fixtures" : [
+                            {
+                                "homeClub" : {
+                                    "name" : "arsneal",
+                                    "crestUrl" : "/img/100x100.gif"
+                                },
+                                "awayClub" : {
+                                    "name" : "wba",
+                                    "crestUrl" : "/img/100x100.gif"
+                                },
+                                "kickOff" : "2pm 7 February", 
+                                "competition" : {
+                                    "id" : "1",
+                                    "name" : "premiership",
+                                    "crestUrl" : "/img/100x100.gif",
+                                    "optaId" : "123"
+                                },
+                                "isHomeGame" : true,
+                                "homeTeamScore" : "0",
+                                "awayTeamScore" : "0",
+                                "hasBeenPlayed" : true,
+                                "matchReportLink" : "/xxx",
+                                "isOnTv" : true,
+                                "tvChannelLogo" : {
+                                    "url" : "/img/100x100.gif",
+                                    "altText" : "Channel name"
+                                }
+                            },
+                            {
+                                "homeClub" : {
+                                    "name" : "arsneal",
+                                    "crestUrl" : "/img/100x100.gif"
+                                },
+                                "awayClub" : {
+                                    "name" : "wba",
+                                    "crestUrl" : "/img/100x100.gif"
+                                },
+                                "kickOff" : "2pm 10 February", 
+                                "competition" : {
+                                    "id" : "1",
+                                    "name" : "premiership",
+                                    "crestUrl" : "/img/100x100.gif",
+                                    "optaId" : "123"
+                                },
+                                "isHomeGame" : true,
+                                "homeTeamScore" : "0",
+                                "awayTeamScore" : "0",
+                                "hasBeenPlayed" : false,
+                                "matchReportLink" : "/xxx",
+                                "isOnTv" : false
+                            }
+                        ]
+                    }
+                ]
+            }    
+        }
+        
+
+## LeagueTable [/league-table]
+### table [GET]
++ Response 200 (application/json)
+
+
+        {
+            "leagueTable" : {
+                "logoUrl" : "//",
+                "name" : "Table of doom",
+                "rows" : [
+                    {
+                        "teamRef" : "xx",
+                        "position" : "1",
+                        "featuredTeam" : "false",
+                        "teamName" : "xx",
+                        "played" : "1",
+                        "won" : "2",
+                        "drawn" : "2",
+                        "lost" : "2",
+                        "goalsFor" : "1",
+                        "goalsAgainst" : "1",
+                        "goalDifference" : "1",
+                        "points" : "1"
+                    },
+                    {
+                        "teamRef" : "xx",
+                        "position" : "1",
+                        "featuredTeam" : "false",
+                        "teamName" : "xx",
+                        "played" : "1",
+                        "won" : "2",
+                        "drawn" : "2",
+                        "lost" : "2",
+                        "goalsFor" : "1",
+                        "goalsAgainst" : "1",
+                        "goalDifference" : "1",
+                        "points" : "1"
+                    },
+                    {
+                        "teamRef" : "xx",
+                        "position" : "1",
+                        "featuredTeam" : "false",
+                        "teamName" : "xx",
+                        "played" : "1",
+                        "won" : "2",
+                        "drawn" : "2",
+                        "lost" : "2",
+                        "goalsFor" : "1",
+                        "goalsAgainst" : "1",
+                        "goalDifference" : "1",
+                        "points" : "1"
+                    },
+                    {
+                        "teamRef" : "xx",
+                        "position" : "1",
+                        "featuredTeam" : "false",
+                        "teamName" : "xx",
+                        "played" : "1",
+                        "won" : "2",
+                        "drawn" : "2",
+                        "lost" : "2",
+                        "goalsFor" : "1",
+                        "goalsAgainst" : "1",
+                        "goalDifference" : "1",
+                        "points" : "1"
+                    }
+                ]
+            }    
+        }
+   
+## Player Profile Module [/player-profile]
+### player Profile Detail view  [GET]
++ Response 200 (application/json)
+        
+        { 
+            "playerProfile": {
+                "position" : "defender",
+                "height" : "500cm",
+                "weight" : "500kg",
+                "squadNumber" : "23",
+                "image" : {
+                    "urls" :{
+                      "small" : {
+                        "url" : "/img/480x270.gif",
+                        "mw" : "480w"
+                      },
+                      "medium" : {
+                        "url" : "/img/380x214.gif",
+                        "mw" : "800w"
+                      },
+                      "large" : {
+                        "url" : "/img/750x422.gif",
+                        "mw" : "1200w"
+                      }
+                    },
+                    "altText" : "The alt text",
+                    "isSmall" : false
+                },
+                "knownAs" : "Gilberto",
+                "firstName" : "Lee",
+                "lastName" : "cook",
+                "dob" : "13/4/1983",
+                "age" : "21",
+                "placeOfBirth" : "japan",
+                "summary" : "best footballer ever !",
+                "contentListing" : {
+                    "items": [
+                        {
+                            "title" : "Article one",
+                            "summary" : "Article one summary",
+                            "image" : {
+                                "urls" :{
+                                  "small" : {
+                                    "url" : "/img/480x270.gif",
+                                    "mw" : "480w"
+                                  },
+                                  "medium" : {
+                                    "url" : "/img/380x214.gif",
+                                    "mw" : "800w"
+                                  },
+                                  "large" : {
+                                    "url" : "/img/750x422.gif",
+                                    "mw" : "1200w"
+                                  }
+                                },
+                                "altText" : "The alt text",
+                                "isSmall" : false
+                            },
+                            "link" : {
+                                "title" : "link title",
+                                "url" : "/article/1"
+                            }
+                        },
+                        {
+                            
+                            "title" : "Article two",
+                            "summary" : "Article two summary with loads more text with loads more text with loads more text with loads more text",
+                            "image" : {
+                                "urls" :{
+                                  "small" : {
+                                    "url" : "/img/480x270.gif",
+                                    "mw" : "480w"
+                                  },
+                                  "medium" : {
+                                    "url" : "/img/380x214.gif",
+                                    "mw" : "800w"
+                                  },
+                                  "large" : {
+                                    "url" : "/img/750x422.gif",
+                                    "mw" : "1200w"
+                                  }
+                                },
+                                "altText" : "The alt text",
+                                "isSmall" : false
+                            },
+                            "link" : {
+                                "title" : "link title",
+                                "url" : "article/1"
+                            }
+                        }
+                    ],
+                "totalNumberOfPages" : "100",
+                "currentPage" : "2",
+                "listType" : "vertical"
+                },
+                "playerStats" : {
+                    "seasons" :  [
+                        {
+                            "playerRef" : "xxx",
+                           "searchKey" : "key",
+                           "teamSearchKey" : "key",
+                           "ballRecovery" : "1",
+                            "passAccuracy" : "100",
+                            "tackleAccuracy" : "100",
+                           "name" : "2013/2014",
+                           "GoalsScored" : "1",
+                           "GoalsConceded" : "1",
+                           "YellowCards" : "1",
+                           "RedCards" : "1",
+                           "Touches" : "1",
+                           "CompletedPasses" : "1",
+                           "TotalPasses" : "1",
+                           "ShotsOnTarget" : "1",
+                           "ShotsTotal" : "1",
+                           "TacklesWon" : "1",
+                           "TacklesTotal" : "1",
+                           "Assists" : "1",
+                           "Saves" : "1",
+                           "Clearances" : "1",
+                           "Interceptions" : "1",
+                           "AppearancesFromStart" : "1",
+                           "AppearancesAsSub" : "1",
+                           "MinutesPlayed" : "1",
+                           "CleanSheets" : "1"
+                        },{
+                            "searchKey" : "key",
+                           "teamSearchKey" : "key",
+                           "ballRecovery" : "1",
+                            "passAccuracy" : "100",
+                            "tackleAccuracy" : "100",
+                            "playerRef" : "xxx",
+                           "name" : "2014/2015",
+                           "GoalsScored" : "1",
+                           "GoalsConceded" : "1",
+                           "YellowCards" : "1",
+                           "RedCards" : "1",
+                           "Touches" : "1",
+                           "CompletedPasses" : "1",
+                           "TotalPasses" : "1",
+                           "ShotsOnTarget" : "1",
+                           "ShotsTotal" : "1",
+                           "TacklesWon" : "1",
+                           "TacklesTotal" : "1",
+                           "Assists" : "1",
+                           "Saves" : "1",
+                           "Clearances" : "1",
+                           "Interceptions" : "1",
+                           "AppearancesFromStart" : "1",
+                           "AppearancesAsSub" : "1",
+                           "MinutesPlayed" : "1",
+                           "CleanSheets" : "1"
+                        }
+                    ]
+                }
+            }   
+        }
+
+## Sponsors Collection [/sponsors]
+### List all Sponsor items for footer [GET]
++ Response 200 (application/json)
+
+        { "sponsors" : [
+                {
+                    "id" : "1",
+                    "name" : "Sponsor one name",
+                    "image" : {
+                        "altText" : "Sponsor name",
+                        "url" : "/img/100x100.gif"
+                    },
+                    "url" : "SPONSOR_URL"
+                },
+                {
+                    "id" : "2",
+                    "name" : "Sponsor two name",
+                    "image" : {
+                        "altText" : "Sponsor name",
+                        "url" : "/img/100x100.gif"
+                    },
+                    "url" : "SPONSOR_URL"
+                },
+                {
+                    "id" : "3",
+                    "name" : "Sponsor three name",
+                    "image" : {
+                        "altText" : "Sponsor name",
+                        "url" : "/img/100x100.gif"
+                    },
+                    "url" : "SPONSOR_URL"
+                },
+                {
+                    "id" : "4",
+                    "name" : "Sponsor four name",
+                    "image" : {
+                        "altText" : "Sponsor name",
+                        "url" : "/img/100x100.gif"
+                    },
+                    "url" : "SPONSOR_URL"
+                }
+            ]
+            
+        }
+        
+## Video Player Module [/video-player]
+### used for youtube player  [GET]
++ Response 200 (application/json)
+        
+        {
+            "videoPlayer" : { 
+                "id" : "1234",
+                "isYouTube" : true,
+                "isBrightcove" : false,
+                "playerHeight" : "405",
+                "playerWidth" : "720",
+                "playerReference" : "",
+                "videoId" : "vFT8HXJlvfA",
+                "holdingImage" : {
+                    "altText" : "Sponsor name",
+                    "url" : "/img/100x100.gif"
+                },
+                "settings" : {
+                    "autoplay" : 0,
+                    "controls" : 1
+                }
+            }
+        }      
+
+## Multi Language Module [/languages]
+### used for language switcher  [GET]
++ Response 200 (application/json)
+        
+        {
+            "sites" : [
+                {
+                    "name" : "English",
+                    "url" : "SPONSOR_URL"
+                },
+                {
+                    "name" : "Spanish",
+                    "url" : "SPONSOR_URL"
+                }
+            ]
+        }      

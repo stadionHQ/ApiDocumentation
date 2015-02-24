@@ -52,7 +52,75 @@ FORMAT: 1A
 + Parameters
     + id (required, number, `1`) ... Numeric `id` of the Article to perform action with. Has example value.
 
-## ContentListing Collection [/content-listing]
+## News [/news]
+### List all Items in a content list [GET]
++ Response 200 (application/json)
+
+        { 
+            "contentListing" : {
+                "items": [
+                    {
+                        "title" : "Article one",
+                        "summary" : "Article one summary",
+                        "image" : {
+                            "urls" :{
+                              "small" : {
+                                "url" : "/img/480x270.gif",
+                                "mw" : "480w"
+                              },
+                              "medium" : {
+                                "url" : "/img/380x214.gif",
+                                "mw" : "800w"
+                              },
+                              "large" : {
+                                "url" : "/img/750x422.gif",
+                                "mw" : "1200w"
+                              }
+                            },
+                            "altText" : "The alt text",
+                            "isSmall" : false
+                        },
+                        "link" : {
+                            "title" : "link title",
+                            "url" : "/article/1"
+                        }
+                    },
+                    {
+                        
+                        "title" : "Article two",
+                        "summary" : "Article two summary with loads more text with loads more text with loads more text with loads more text",
+                        "image" : {
+                            "urls" :{
+                              "small" : {
+                                "url" : "/img/480x270.gif",
+                                "mw" : "480w"
+                              },
+                              "medium" : {
+                                "url" : "/img/380x214.gif",
+                                "mw" : "800w"
+                              },
+                              "large" : {
+                                "url" : "/img/750x422.gif",
+                                "mw" : "1200w"
+                              }
+                            },
+                            "altText" : "The alt text",
+                            "isSmall" : false
+                        },
+                        "link" : {
+                            "title" : "link title",
+                            "url" : "article/1"
+                        }
+                    }
+                ],
+                "totalNumberOfPages" : "100",
+                "currentPage" : "2",
+                "listType" : "vertical"
+            }
+        }
+ 
+ 
+## Videos [/videos]
 ### List all Items in a content list [GET]
 + Response 200 (application/json)
 

@@ -1,4 +1,10 @@
 language: node_js
-  before_install:
+node_js:
+  - "0.12"
+  - "0.11"
+  - "0.10"
+  - "0.8"
+  - "0.6"
+before_install:
   - npm install -g dredd
-  script: ./scripts/test
+script: ./scripts/test

@@ -2,7 +2,7 @@ FORMAT: 1A
 
 # Stadion Public API
 [![Build Status](https://travis-ci.org/stadionHQ/ApiDocumentation.svg?branch=master)](https://travis-ci.org/stadionHQ/ApiDocumentation)
-## Article Single [/article/{id}]
+## News Article [/article/{id}]
 ### A single Article object with all its details [GET]
 + Response 200 (application/json)
 
@@ -120,7 +120,7 @@ FORMAT: 1A
         }
         
 
-## Fixtures Module [/fixtures/{teamdId}]
+## Fixtures [/fixtures/{teamdId}]
 ### List of fixtures [GET]
 + Response 200 (application/json)
         
@@ -293,7 +293,7 @@ FORMAT: 1A
         }
         
 
-## LeagueTable [/league-table]
+## LeagueTable [/league-table/{teamId}]
 ### table [GET]
 + Response 200 (application/json)
 
@@ -363,7 +363,7 @@ FORMAT: 1A
             }    
         }
    
-## Player Profile Module [/player-profile]
+## Player Profile [/player/{playerId}]
 ### player Profile Detail view  [GET]
 + Response 200 (application/json)
         
@@ -520,7 +520,7 @@ FORMAT: 1A
             }   
         }
 
-## Sponsors Collection [/sponsors]
+## Sponsors [/sponsors]
 ### List all Sponsor items for footer [GET]
 + Response 200 (application/json)
 
@@ -565,7 +565,7 @@ FORMAT: 1A
             
         }
         
-## Video Player Module [/video-player]
+## Video Detail [/video/{videoId}]
 ### used for youtube player  [GET]
 + Response 200 (application/json)
         
@@ -589,19 +589,4 @@ FORMAT: 1A
             }
         }      
 
-## Multi Language Module [/languages]
-### used for language switcher  [GET]
-+ Response 200 (application/json)
-        
-        {
-            "sites" : [
-                {
-                    "name" : "English",
-                    "url" : "SPONSOR_URL"
-                },
-                {
-                    "name" : "Spanish",
-                    "url" : "SPONSOR_URL"
-                }
-            ]
-        }      
+    

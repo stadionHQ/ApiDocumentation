@@ -707,7 +707,7 @@ FORMAT: 1A
         }  
 
 ## Search [/Search]
-### used to to perform a search [POST]
+### used to perform a search [POST]
 + Response 200 (application/json)
         
         {
@@ -715,9 +715,18 @@ FORMAT: 1A
         }  
 
 ## Fixture [/fixture?optaId=123]
-### used to to perform a search [POST]
+### returns dtata and content about a fixture, including stats and martch report [POST]
 + Response 200 (application/json)
         
         {
             "todo":todo
-        }  
+        } 
+
+## Team [/team?optaId=123]
+### used to get list of players in a team [POST]
++ Response 200 (application/json)
+        
+        {
+            "todo":todo
+        } 
+

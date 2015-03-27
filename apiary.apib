@@ -715,7 +715,39 @@ FORMAT: 1A
         }  
 
 ## Fixture [/fixture?optaId=123]
-### returns dtata and content about a fixture, including stats and martch report [POST]
+### returns dtata and content about a fixture, including stats and martch report [GET]
++ Response 200 (application/json)
+        
+        {
+            "todo":todo
+        } 
+
+## Head2Head [/head2Head?team1Id=123&team2Id=1234]
+### returnshead2Head data [GET]
++ Response 200 (application/json)
+        
+        {
+            "todo":todo
+        } 
+
+## Recent Form [/recentForm?team1Id=123]
+### returns recent form data [GET]
++ Response 200 (application/json)
+        
+        {
+            "todo":todo
+        } 
+
+## Team Characteristics [/teamCharacteristics?team1Id=123]
+### returns who scored data [GET]
++ Response 200 (application/json)
+        
+        {
+            "todo":todo
+        } 
+
+## Player Career History [/careerHistory?playerId=123]
+### returns detailed apperance data for a player [GET]
 + Response 200 (application/json)
         
         {
